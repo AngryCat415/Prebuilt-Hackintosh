@@ -1,0 +1,80 @@
+********* PREPARING USB AND HARD DRIVE ********
+
+Press Win+R and type "DISKPART".
+In opened window type "list disk"
+Find your USB in list (mine is Disk 3)
+Then type "sel disk [your usb number]"
+And finally type "clear" now your USB ready.
+To prepare Hard Drive or SSD you need to
+open disk manager (right mouse button on 
+start menu > disk manager) and format it
+in NTFS or exFat.
+
+****** WRITING MACOS INSTALLER AND CLOVER *****
+
+Download R-Drive from official site and
+install it. Open R-Drive and select
+"Restore from image", find .rdr file you
+from this repo press next until USB selection
+screen. Select image and USB stick and press
+Next untill writing starts.
+
+************** BIOS/UEFI SETTINGS *************
+
+###UEFI BIOS###
+
+Set settings to default
+Sata Mode: AHCI
+Vt-d: disable
+Intel virtualization technology: disable
+Serial-port: disable
+XHCI Hand-off: disable (recommended enable if
+something doesn't work)
+IOAPIC 24-119 entries: enable (disable if you
+have problems with booting)
+CSM: diaable if possible
+FastBoot: disable
+Secure Boot: disable/other os
+
+###LEGACY BIOS###
+
+Sata Mode: AHCI
+Hpet: enable
+Vt-d: disable
+ACPI suspend type: s3 (ONLY)
+No execute memory: enable
+USB legacy: enable
+
+!!! IMPORTANT !!!
+
+Disconnect everything like webcam,
+bluetooth devices etc.
+Save changes and turn off PC
+
+*********** BOOTING AND INSTALLING ************
+
+Turn on your PC and enter boot menu.
+Choose USB Stick and after clover boots you
+can edit boot args and configs if MacOS
+Installer not booting. Choose install MacOS
+and wait for it to load.
+After it loads open Disk Utility and format
+Your HDD or SSD in "MacOS Extended (Journaled)"
+Format.
+Close Disk Utility and Install MacOS like on
+iMac/MacBook.
+After PC reboots boot from USB and choose MacOS
+On [your disk name] and continue installing
+If it reboots again boot from USB and choose 
+your hard drive
+
+************** AFTER INSTALLING ***************
+
+After installation, configure the system as you 
+like.  You will have an install macOS icon on 
+your desktop, open it and open the clover
+ configurator.  Select Mount EFI and mount hard 
+drive with windows and USB with clover copy EFI
+folder from USB and paste it to your hard drive.
+Congratulations! Now you have MacOS on Windows
+Laptop/PC
