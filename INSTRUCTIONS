@@ -4,10 +4,11 @@ Press Win+R and type "DISKPART".
 In opened window type "list disk"
 Find your USB in list (mine is Disk 3)
 Then type "sel disk [your usb number]"
-And finally type "clear" now your USB ready.
+And finally type "clean" now your USB ready
+to write macOS image.
 To prepare Hard Drive or SSD you need to
-open disk manager (right mouse button on 
-start menu > disk manager) and format it
+open disk management (right mouse button on 
+start menu > disk management) and format it
 in NTFS or exFat.
 
 ****** WRITING MACOS INSTALLER AND CLOVER *****
